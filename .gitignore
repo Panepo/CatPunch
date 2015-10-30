@@ -73,3 +73,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# =========================
+# Self define
+*.bak
+*.bat
+test*.html
+test*.js
+js/bundle.js
