@@ -12,7 +12,7 @@ var Footer = React.createClass({
           <div className="mdl-layout-spacer"></div>
         </div>
       </header>
-      <div class="demo-ribbon"></div>
+      <div className="demo-ribbon"></div>
 		</div>
 		);
 	}

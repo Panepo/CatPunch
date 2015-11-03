@@ -1,7 +1,8 @@
 var React = require("react");
 var Header = require("./Header.react");
-var ContentInp = require("./ContentInp.react");
-var ContentOut = require("./ContentOut.react");
+var ConInpRad = require("./ConInpRad.react");
+var ConInpText = require("./ConInpText.react");
+var ConOut = require("./ConOut.react");
 var Footer = require("./Footer.react");
 var AppStore = require("../stores/AppStore");
 
@@ -25,8 +26,9 @@ var FKGCalApp = React.createClass({
 		return(
 			<div className="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
 				<Header />
-				<ContentInp CalData={this.state.CalData}/>
-				<ContentOut CalData={this.state.CalData}/>		
+				<ConInpRad CalData={this.state.CalData}/>
+				<ConInpText CalData={this.state.CalData}/>
+				<ConOut CalData={this.state.CalData}/>		
 				<Footer />	
 			</div>
 		);

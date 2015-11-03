@@ -1,14 +1,23 @@
 var AppDispatcher = require("../dispatcher/AppDispatcher");
 var AppAction = {
-	RarityC: function(){
+	LevelInput: function(InpLevel){
 		AppDispatcher.dispatch({
-			actionType: "RarityChange"
+			actionType: "LevelInput",
+			InpLevel: InpLevel
 		});
 	},
-
-	PromptC: function(){
+	
+	RarityC: function(InpRarity){
 		AppDispatcher.dispatch({
-			actionType: "PromptChange"
+			actionType: "RarityChange",
+			InpRarity: InpRarity
+		});
+	},
+	
+	PromptC: function(InpPrompt){
+		AppDispatcher.dispatch({
+			actionType: "PromptChange",
+			InpPrompt: InpPrompt
 		});
 	}
 };

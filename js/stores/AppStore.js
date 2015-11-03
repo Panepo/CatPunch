@@ -7,20 +7,30 @@ var CHANGE_EVENT = 'change';
 var _CalData = {
 	InpLevel: 1,
 	InpExp: 33,
-	InpRar: 2,
-	InpPro: 0
+	InpRarity: 2,
+	InpPrompt: 0,
+	InpFeed5: 0,
+	InpFeed20: 0,
+	InpFeed100: 0,
+	InpFeed5x: 0,
+	InpFeed20x: 0,
+	InpFeed100x: 0,
 	};
 
 // ===============================================================================
 // APP STORE FUNCTIONS
 // ===============================================================================
-function _RarityC(){
-	_CalData.InpLevel++;
+function _RarityC(InpRarity){
+	_CalData.InpRarity = InpRarity;
 }
 
 
-function _PromptC(){
-	_CalData.InpExp++;
+function _PromptC(InpPrompt){
+	_CalData.InpPrompt = InpPrompt;
+}
+
+function _LevelInput(InpLevel){
+	_CalData.InpLevel = InpLevel;
 }
 
 
@@ -31,9 +41,7 @@ function _PromptC(){
 // define a Store object the extends EventEmitter from node.js event lib
 var AppStore = assign({}, EventEmitter.prototype, {
 	getValue: function(){
-		return {
-			_CalData
-		};
+		return _CalData;
 	},
 
   // trigger a value changed event!!
@@ -60,14 +68,22 @@ var AppStore = assign({}, EventEmitter.prototype, {
 //Use dispatcher to listen some events
 AppDispatcher.register(function(action){
 	switch(action.actionType){
+		case "LevelInput":
+			_LevelInput(action.InpLevel);
+			AppStore.emitChange();
+			break;
+		
 		case "RarityChange":
-			_RarityC(); // do increase logic
-			AppStore.emitChange();  // after value change, trigger a event
+			_RarityC(action.InpRarity);
+			AppStore.emitChange();
 			break;
+			
 		case "PromptChange":
-			_PromptC(); // do decrease logic
-			AppStore.emitChange(); // after value change, trigger a event
+			_PromptC(action.InpPrompt);
+			AppStore.emitChange();
 			break;
+			
+			
 		default:
 	}
 });
