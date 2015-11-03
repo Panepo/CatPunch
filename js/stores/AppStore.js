@@ -3,19 +3,24 @@ var EventEmitter = require('events').EventEmitter;
 var assign = require("object-assign");
 
 var CHANGE_EVENT = 'change';
-// Our value show on the view
-var _value = 0;
+
+var _CalData = {
+	InpLevel: 1,
+	InpExp: 33,
+	InpRar: 2,
+	InpPro: 0
+	};
 
 // ===============================================================================
 // APP STORE FUNCTIONS
 // ===============================================================================
-// increase logic
 function _RarityC(){
-	_value++;
+	_CalData.InpLevel++;
 }
-// decrease logic
+
+
 function _PromptC(){
-	_value--;
+	_CalData.InpExp++;
 }
 
 
@@ -26,7 +31,9 @@ function _PromptC(){
 // define a Store object the extends EventEmitter from node.js event lib
 var AppStore = assign({}, EventEmitter.prototype, {
 	getValue: function(){
-		return _value;
+		return {
+			_CalData
+		};
 	},
 
   // trigger a value changed event!!

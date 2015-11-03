@@ -12,11 +12,12 @@
   },
   "devDependencies": {
     "browserify": "~9.0.3",
+    "css-loader": "^0.21.0",
     "reactify": "~1.0.0"
   },
   "scripts": {
-    "start": "watchify -o js/bundle.js -v -d js/app.js",
-    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js"
+    "start": "watchify -o bundle.js -v -d js/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > bundle.min.js"
   },
   "browserify": {
     "transform": [

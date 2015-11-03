@@ -1,21 +1,19 @@
-// View
-
 var React = require("react");
 var Header = require("./Header.react");
-var Content = require("./Content.react");
+var ContentInp = require("./ContentInp.react");
+var ContentOut = require("./ContentOut.react");
+var Footer = require("./Footer.react");
 var AppStore = require("../stores/AppStore");
 
 var FKGCalApp = React.createClass({
-	
-  //initial stage, use Store to get default value and bind to the React state
+
 	getInitialState: function(){
 		return{
-			value: AppStore.getValue()
+			CalData: AppStore.getValue()
 		};
 	},
 	
 	componentDidMount: function() {
-	  //listen up an event from Store, if value in Store changed, _onChange function will be triggered
     AppStore.addChangeListener(this._onChange);
 	},
 
@@ -25,18 +23,18 @@ var FKGCalApp = React.createClass({
 
 	render: function(){
 		return(
-			<div>
+			<div className="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
 				<Header />
-				<Content value={this.state.value}/>			
+				<ContentInp CalData={this.state.CalData}/>
+				<ContentOut CalData={this.state.CalData}/>		
+				<Footer />	
 			</div>
 		);
 	},
 	
-  // If value in Store change, this function will be triggered
-  // so we need to reset the state
 	_onChange: function(){
 		this.setState({
-			value: AppStore.getValue()
+			CalData: AppStore.getValue()
 		});
 	}
 });
