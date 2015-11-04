@@ -1,6 +1,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require("object-assign");
+var FKGExpCal = require("./FKGExpCal");
 
 var CHANGE_EVENT = 'change';
 
@@ -15,24 +16,72 @@ var _CalData = {
 	InpFeed5x: 0,
 	InpFeed20x: 0,
 	InpFeed100x: 0,
+	FeedTable: [],
+	DisplayEnable: false
 	};
 
 // ===============================================================================
 // APP STORE FUNCTIONS
 // ===============================================================================
-function _RarityC(InpRarity){
-	_CalData.InpRarity = InpRarity;
-}
-
-
-function _PromptC(InpPrompt){
-	_CalData.InpPrompt = InpPrompt;
-}
-
-function _LevelInput(InpLevel){
+function _InpLevel(InpLevel){
 	_CalData.InpLevel = InpLevel;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
 }
 
+function _InpExp(InpExp){
+	_CalData.InpExp = InpExp;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpRarity(InpRarity){
+	_CalData.InpRarity = InpRarity;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpPrompt(InpPrompt){
+	_CalData.InpPrompt = InpPrompt;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpFeed5(InpFeed5){
+	_CalData.InpFeed5 = InpFeed5;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpFeed20(InpFeed20){
+	_CalData.InpFeed20 = InpFeed20;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpFeed100(InpFeed100){
+	_CalData.InpFeed100 = InpFeed100;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpFeed5x(InpFeed5x){
+	_CalData.InpFeed5x = InpFeed5x;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpFeed20x(InpFeed20x){
+	_CalData.InpFeed20x = InpFeed20x;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
+
+function _InpFeed100x(InpFeed100x){
+	_CalData.InpFeed100x = InpFeed100x;
+	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	_CalData.DisplayEnable = true;
+}
 
 
 // ===============================================================================
@@ -46,7 +95,7 @@ var AppStore = assign({}, EventEmitter.prototype, {
 
   // trigger a value changed event!!
 	emitChange: function() {
-    	this.emit(CHANGE_EVENT);
+    this.emit(CHANGE_EVENT);
   },
   
   // the callback function will be defined and be passed from view 
@@ -68,22 +117,56 @@ var AppStore = assign({}, EventEmitter.prototype, {
 //Use dispatcher to listen some events
 AppDispatcher.register(function(action){
 	switch(action.actionType){
-		case "LevelInput":
-			_LevelInput(action.InpLevel);
+		case "InputLevel":
+			_InpLevel(action.InpLevel);
+			AppStore.emitChange();
+			break;
+			
+		case "InputExp":
+			_InpExp(action.InpExp);
 			AppStore.emitChange();
 			break;
 		
-		case "RarityChange":
-			_RarityC(action.InpRarity);
+		case "InputRarity":
+			_InpRarity(action.InpRarity);
 			AppStore.emitChange();
 			break;
 			
-		case "PromptChange":
-			_PromptC(action.InpPrompt);
+		case "InputPrompt":
+			_InpPrompt(action.InpPrompt);
 			AppStore.emitChange();
 			break;
-			
-			
+
+		case "InputFeed5":
+			_InpFeed5(action.InpFeed5);
+			AppStore.emitChange();
+			break;
+
+		case "InputFeed20":
+			_InpFeed20(action.InpFeed20);
+			AppStore.emitChange();
+			break;	
+
+		case "InputFeed100":
+			_InpFeed100(action.InpFeed100);
+			AppStore.emitChange();
+			break;
+
+		case "InputFeed5x":
+			_InpFeed5x(action.InpFeed5x);
+			AppStore.emitChange();
+			break;
+
+		case "InputFeed20x":
+			_InpFeed20x(action.InpFeed20x);
+			AppStore.emitChange();
+			break;	
+
+		case "InputFeed100x":
+			_InpFeed100x(action.InpFeed100x);
+			AppStore.emitChange();
+			break;
+
 		default:
 	}
 });

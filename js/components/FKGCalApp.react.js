@@ -26,9 +26,16 @@ var FKGCalApp = React.createClass({
 		return(
 			<div className="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
 				<Header />
-				<ConInpRad CalData={this.state.CalData}/>
-				<ConInpText CalData={this.state.CalData}/>
-				<ConOut CalData={this.state.CalData}/>		
+				<main className="demo-main mdl-layout__content">
+					<div className="demo-container mdl-grid">
+						<div className="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+						<div className="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+						<ConInpRad />
+						<ConInpText />
+						<ConOut CalData={this.state.CalData}/>
+						</div>
+					</div>
+				</main>
 				<Footer />	
 			</div>
 		);

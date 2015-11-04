@@ -22,7 +22,7 @@ var ConInpRad = React.createClass({
   		InpRarity = document.getElementById("InpRar6").value;
 		}
 		
-		AppAction.RarityC(InpRarity);
+		AppAction.InpRarity(InpRarity);
 	},
 
 	handlePrompt: function(){
@@ -35,12 +35,10 @@ var ConInpRad = React.createClass({
   		InpPrompt = document.getElementById("InpPro1").value;
 		}
 		
-		AppAction.PromptC(InpPrompt);
+		AppAction.InpPrompt(InpPrompt);
 	},
 		
 	render: function(){
-		
-		var CalData = this.props.CalData;
 				
 		return(
 		<div>
