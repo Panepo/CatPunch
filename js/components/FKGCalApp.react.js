@@ -24,6 +24,7 @@ var FKGCalApp = React.createClass({
 
 	render: function(){
 		return(
+		<div>
 			<div className="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
 				<Header />
 				<main className="demo-main mdl-layout__content">
@@ -38,6 +39,7 @@ var FKGCalApp = React.createClass({
 				</main>
 				<Footer />	
 			</div>
+		</div>
 		);
 	},
 	
