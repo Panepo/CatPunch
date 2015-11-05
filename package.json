@@ -7,12 +7,16 @@
   "license": "MIT",
   "dependencies": {
     "flux": "~2.0.1",
+    "griddle-react": "^0.2.14",
+    "object-assign": "~2.0.0",
     "react": "~0.12.2",
-    "object-assign": "~2.0.0"
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "browserify": "~9.0.3",
-    "reactify": "~1.0.0"
+    "envify": "^3.4.0",
+    "reactify": "~1.0.0",
+    "watchify": "^3.6.0"
   },
   "scripts": {
     "start": "watchify -o bundle.js -v -d js/app.js",
