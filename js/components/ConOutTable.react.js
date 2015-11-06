@@ -23,7 +23,7 @@ var ConOutTable = React.createClass({
 		for ( i = 1; i < CalData.FeedTable.length; i++)
 		{
 			TableCont = (
-					<tr>
+					<tr key={i}>
 					<td>{CalData.FeedTable[i][0]}</td>
 					<td>{CalData.FeedTable[i][1]}</td>
 					<td>{CalData.FeedTable[i][2]}</td>
