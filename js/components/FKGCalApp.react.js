@@ -47,7 +47,7 @@ var FKGCalApp = React.createClass({
 		this.setState({
 			CalData: AppStore.getValue()
 		});
-	}
+	}	
 });
 
 module.exports = FKGCalApp;

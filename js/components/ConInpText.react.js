@@ -141,7 +141,7 @@ var ConInpText = React.createClass({
       </p>
 		</div>
 		);
-	}	
+	}
 });
 
 module.exports = ConInpText;
