@@ -43,8 +43,9 @@ var ConInpRad = React.createClass({
 		return(
 		<div>
 			<div className="demo-crumbs mdl-color-text--grey-500">
-      	Panepo.Github.io &gt; Flower Knight Girl Exp Calculator 
+      	Panepo.Github.io &gt; NērēÏdes Garden &gt; Flower Knight Girl Exp Calculator 
       </div>
+      <h4>フラワーナイトガール経験値計算機</h4>
 			<h5>對象騎士</h5>
 			<p>
 				レアリティ：
