@@ -1,5 +1,4 @@
 var React = require("react");
-var AppAction = require("../actions/AppAction");
 
 var Header = React.createClass({
 	displayName: "Header",

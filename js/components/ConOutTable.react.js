@@ -1,10 +1,15 @@
 var React = require("react");
+var ReactPropTypes = React.PropTypes;
 
 var ConOutTable = React.createClass({
+	displayName: "ConOutTable",
+	
+	propTypes: {
+    FeedTable: ReactPropTypes.array.isRequired,
+  },
 	
 	render: function(){
 		
-		var CalData = this.props.CalData;
 		var TableData = [];
 		var TableCont;
 		var TableHead = (
@@ -19,16 +24,14 @@ var ConOutTable = React.createClass({
 				</thead>
     );
     
-    var i;
-		for ( i = 1; i < CalData.FeedTable.length; i++)
-		{
+		for ( var i = 1; i < this.props.FeedTable.length; i++) {
 			TableCont = (
 					<tr key={i}>
-					<td>{CalData.FeedTable[i][0]}</td>
-					<td>{CalData.FeedTable[i][1]}</td>
-					<td>{CalData.FeedTable[i][2]}</td>
-					<td>{CalData.FeedTable[i][3]}</td>
-					<td>{CalData.FeedTable[i][4]}</td>
+					<td>{this.props.FeedTable[i][0]}</td>
+					<td>{this.props.FeedTable[i][1]}</td>
+					<td>{this.props.FeedTable[i][2]}</td>
+					<td>{this.props.FeedTable[i][3]}</td>
+					<td>{this.props.FeedTable[i][4]}</td>
 					</tr>
 			);
 			TableData.push(TableCont);

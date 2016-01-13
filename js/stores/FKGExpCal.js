@@ -1,6 +1,6 @@
 var FKGExpCal = {
 	
-	ExpCal: function ExpCal(CalData){
+	ExpCal: function(CalData){
 		var ExpLeft;
 		var FeedTable = [];
 		FeedTable[0] = [];
@@ -107,7 +107,7 @@ var FKGExpCal = {
 		return FeedTable;
 	},
 	
-	FeedCal: function FeedCal(ExpLeft){	
+	FeedCal: function(ExpLeft){	
 		var FeedTable = [];	
 		var RepTimes, i;
 		var cnt5, cnt20, cnt100;
@@ -153,56 +153,7 @@ var FKGExpCal = {
 		
 		return FeedTable;
 	},
-	
-	/*
-	HtmlLayout: function HtmlLayout (ExpLeft, FeedTable){	
-	var OutputText = "";
-		
-		OutputText = "<p>最大Lvまでの経験値：";
-		OutputText += parseInt(ExpLeft);
-	
-		OutputText += "</p><p>最大Lvまでにあと必要な同属性素材の目安</p>" +
-		"<table class=\"mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp\">" +
-	  "<thead>" +
-	  "  <tr>" +
-	  "    <th class='table-content'>" +
-	  "				100才" +
-	  "    </th>" +
-	  "    <th class='table-content'>" +
-	  "				20才" +
-	  "    </th>" +
-	  "    <th class='table-content'>" +
-	  "				5才" +
-	  "    </th>" +
-	  "    <th class='table-content'>" +
-	  "				總數" +
-	  "    </th>" +
-	  "    <th class='table-content'>" +
-	  "				溢出経験値" +
-	  "    </th>" +
-	  "  </tr>" +
-	  "</thead>" +
-	  "<tbody>";
-	    
-	  var i = 0;
-	  while ( i < FeedTable.length )
-	  {
-	  	OutputText += "<tr>" +
-			"<td>" + FeedTable[i][0] + "</td>" +
-			"<td>" + FeedTable[i][1] + "</td>" +
-			"<td>" + FeedTable[i][2] + "</td>" +
-			"<td>" + FeedTable[i][3] + "</td>" +
-			"<td>" + FeedTable[i][4] + "</td>" +
-			"</tr>";
-			
-			i++;
-	  }
-	  
-	  OutputText += "</tbody></table></p>";
-	
-		return OutputText;
-		
-	}*/
+
 };
 
 module.exports = FKGExpCal;

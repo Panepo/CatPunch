@@ -23,14 +23,8 @@ var _CalData = {
 // ===============================================================================
 // APP STORE FUNCTIONS
 // ===============================================================================
-function _InpLevel(InpLevel){
-	_CalData.InpLevel = InpLevel;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpExp(InpExp){
-	_CalData.InpExp = InpExp;
+function _inputChange(type, input) {
+	_CalData[type] = input;
 	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
 	_CalData.DisplayEnable = true;
 }
@@ -43,42 +37,6 @@ function _InpRarity(InpRarity){
 
 function _InpPrompt(InpPrompt){
 	_CalData.InpPrompt = InpPrompt;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpFeed5(InpFeed5){
-	_CalData.InpFeed5 = InpFeed5;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpFeed20(InpFeed20){
-	_CalData.InpFeed20 = InpFeed20;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpFeed100(InpFeed100){
-	_CalData.InpFeed100 = InpFeed100;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpFeed5x(InpFeed5x){
-	_CalData.InpFeed5x = InpFeed5x;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpFeed20x(InpFeed20x){
-	_CalData.InpFeed20x = InpFeed20x;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
-	_CalData.DisplayEnable = true;
-}
-
-function _InpFeed100x(InpFeed100x){
-	_CalData.InpFeed100x = InpFeed100x;
 	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
 	_CalData.DisplayEnable = true;
 }
@@ -117,16 +75,6 @@ var AppStore = assign({}, EventEmitter.prototype, {
 //Use dispatcher to listen some events
 AppDispatcher.register(function(action){
 	switch(action.actionType){
-		case "InputLevel":
-			_InpLevel(action.InpLevel);
-			AppStore.emitChange();
-			break;
-			
-		case "InputExp":
-			_InpExp(action.InpExp);
-			AppStore.emitChange();
-			break;
-		
 		case "InputRarity":
 			_InpRarity(action.InpRarity);
 			AppStore.emitChange();
@@ -137,33 +85,8 @@ AppDispatcher.register(function(action){
 			AppStore.emitChange();
 			break;
 
-		case "InputFeed5":
-			_InpFeed5(action.InpFeed5);
-			AppStore.emitChange();
-			break;
-
-		case "InputFeed20":
-			_InpFeed20(action.InpFeed20);
-			AppStore.emitChange();
-			break;	
-
-		case "InputFeed100":
-			_InpFeed100(action.InpFeed100);
-			AppStore.emitChange();
-			break;
-
-		case "InputFeed5x":
-			_InpFeed5x(action.InpFeed5x);
-			AppStore.emitChange();
-			break;
-
-		case "InputFeed20x":
-			_InpFeed20x(action.InpFeed20x);
-			AppStore.emitChange();
-			break;	
-
-		case "InputFeed100x":
-			_InpFeed100x(action.InpFeed100x);
+		case "inputChange":
+			_inputChange(action.type, action.input);
 			AppStore.emitChange();
 			break;
 

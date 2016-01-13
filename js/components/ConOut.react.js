@@ -1,34 +1,32 @@
 var React = require("react");
+var ReactPropTypes = React.PropTypes;
 var ConOutTable = require("./ConOutTable.react");
 
 var ConOut = React.createClass({
+	displayName: "ConInpRad",
+	
+	propTypes: {
+    FeedTable: ReactPropTypes.array.isRequired,
+		DisplayEnable: ReactPropTypes.bool.isRequired
+  },
 	
 	render: function(){
-		
-		var CalData = this.props.CalData;
-		var DisplayEnable = CalData.DisplayEnable;
-		
-		if ( DisplayEnable === false )
-		{
+				
+		if ( this.props.DisplayEnable === false ) {
 			return null;
-		}
-		else
-		{
-			if ( typeof CalData.FeedTable[0][0] === 'string' || CalData.FeedTable[0][0] instanceof String )
-			{
+		} else {
+			if ( typeof this.props.FeedTable[0][0] === 'string' || this.props.FeedTable[0][0] instanceof String ) {
 				return( 
 					<div>
-						{CalData.FeedTable[0][0]}
+						{this.props.FeedTable[0][0]}
 					</div>
 				);
-			}
-			else
-			{								
+			} else {								
 				return(
 					<div>
-						<p>最大Lvまでの経験値：{CalData.FeedTable[0][0]}</p>
+						<p>最大Lvまでの経験値：{this.props.FeedTable[0][0]}</p>
 						<p>最大Lvまでにあと必要な同属性素材の目安</p>
-						<ConOutTable CalData={this.props.CalData}/>
+						<ConOutTable FeedTable={this.props.FeedTable}/>
 					</div>
 				);
 			}
@@ -36,17 +34,8 @@ var ConOut = React.createClass({
 	},
 	
 	componentDidUpdate: function() {
-    // This upgrades all upgradable components (i.e. with 'mdl-js-*' class)
     componentHandler.upgradeDom();
-
-    // We could have done this manually for each component
-    /*
-     * var submitButton = this.refs.submit.getDOMNode();
-     * componentHandler.upgradeElement(submitButton, "MaterialButton");
-     * componentHandler.upgradeElement(submitButton, "MaterialRipple");
-     */
   }
-	
 });
 
 module.exports = ConOut;
