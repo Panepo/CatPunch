@@ -7,6 +7,7 @@ var Footer = require("./Footer.react");
 var AppStore = require("../stores/AppStore");
 
 var FKGCalApp = React.createClass({
+	displayName: "FKGCalApp",
 
 	getInitialState: function(){
 		return{
@@ -31,8 +32,8 @@ var FKGCalApp = React.createClass({
 					<div className="demo-container mdl-grid">
 						<div className="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
 						<div className="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-						<ConInpRad />
-						<ConInpText />
+						<ConInpRad InpRarity={this.state.CalData.InpRarity} InpPrompt={this.state.CalData.InpPrompt}/>
+						<ConInpText InpLevel={this.state.CalData.InpLevel} InpExp={this.state.CalData.InpExp} />
 						<ConOut CalData={this.state.CalData}/>
 						</div>
 					</div>

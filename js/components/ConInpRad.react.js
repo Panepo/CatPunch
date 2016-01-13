@@ -1,86 +1,89 @@
 var React = require("react");
+var ReactPropTypes = React.PropTypes;
 var AppAction = require("../actions/AppAction");
 
 var ConInpRad = React.createClass({
+	displayName: "ConInpRad",
+	
+	propTypes: {
+    InpPrompt: ReactPropTypes.number.isRequired,
+		InpRarity: ReactPropTypes.number.isRequired
+  },
 		
-	handleRarity: function(){
-		var InpRarity;
-		
-		if (document.getElementById("InpRar2").checked){
-  		InpRarity = document.getElementById("InpRar2").value;
-		}
-		else if (document.getElementById("InpRar3").checked){
-  		InpRarity = document.getElementById("InpRar3").value;
-		}
-		else if (document.getElementById("InpRar4").checked){
-  		InpRarity = document.getElementById("InpRar4").value;
-		}
-		else if (document.getElementById("InpRar5").checked){
-  		InpRarity = document.getElementById("InpRar5").value;
-		}
-		else if (document.getElementById("InpRar6").checked){
-  		InpRarity = document.getElementById("InpRar6").value;
-		}
-		
+	handleRarity: function(event){
+		var InpRarity = parseInt(event.target.id.slice(6)) + 2;
 		AppAction.InpRarity(InpRarity);
 	},
 
-	handlePrompt: function(){
-		var InpPrompt;
-		
-		if (document.getElementById("InpPro0").checked){
-  		InpPrompt = document.getElementById("InpPro0").value;
-		}
-		else if (document.getElementById("InpPro1").checked){
-  		InpPrompt = document.getElementById("InpPro1").value;
-		}
-		
+	handlePrompt: function(event){
+		var InpPrompt = parseInt(event.target.id.slice(6));	
 		AppAction.InpPrompt(InpPrompt);
 	},
 		
 	render: function(){
-				
+		var buttonClassActive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary";
+		var buttonClassInactive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent";
+		var idStringTemp = "";
+		
+		var rarityList = ["★★", "★★★", "★★★★", "★★★★★", "★★★★★★"];
+		var rarityTemp;
+		var rarityOutput = [];
+		
+		for ( var i = 0; i < rarityList.length; i++) {
+			idStringTemp = "rarity" + i.toString();
+			
+			if ( this.props.InpRarity == (i+2) ) {
+				rarityTemp = (
+					<button id={idStringTemp} key={idStringTemp} className={buttonClassActive} onClick={this.handleRarity}>
+						{rarityList[i]}
+					</button>
+				);
+			} else {
+				rarityTemp = (
+					<button id={idStringTemp} key={idStringTemp} className={buttonClassInactive} onClick={this.handleRarity}>
+						{rarityList[i]}
+					</button>
+				);
+			}
+			rarityOutput.push(rarityTemp);
+		}
+		
+		
+		var promptList = ["未進化", "進化済"];
+		var promptTemp;
+		var promptOutput = [];
+		
+		for ( var i = 0; i < promptList.length; i++) {
+			idStringTemp = "prompt" + i.toString();
+			
+			if ( this.props.InpPrompt == i ) {
+				promptTemp = (
+					<button id={idStringTemp} key={idStringTemp} className={buttonClassActive} onClick={this.handlePrompt}>
+						{promptList[i]}
+					</button>
+				);
+			} else {
+				promptTemp = (
+					<button id={idStringTemp} key={idStringTemp} className={buttonClassInactive} onClick={this.handlePrompt}>
+						{promptList[i]}
+					</button>
+				);
+			}
+			promptOutput.push(promptTemp);
+		}
+		
 		return(
-		<div>
-			<div className="demo-crumbs mdl-color-text--grey-500">
-      	Panepo.Github.io &gt; Yabushirazu &gt; Flower Knight Girl Exp Calculator 
-      </div>
+		<div className="ConInpRad">
       <h4>フラワーナイトガール経験値計算機</h4>
 			<h5>對象騎士</h5>
-			<p>
+			<div>
 				レアリティ：
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpRar2" className="mdl-radio__button" name="InpRar" onClick={this.handleRarity} value="2" defaultChecked/>
-					<span className="mdl-radio__label">★★</span>
-				</label>
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpRar3" className="mdl-radio__button" name="InpRar" onClick={this.handleRarity} value="3" />
-					<span className="mdl-radio__label">★★★</span>
-				</label>
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpRar4" className="mdl-radio__button" name="InpRar" onClick={this.handleRarity} value="4" />
-					<span className="mdl-radio__label">★★★★</span>
-				</label>
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpRar5" className="mdl-radio__button" name="InpRar" onClick={this.handleRarity} value="5" />
-					<span className="mdl-radio__label">★★★★★</span>
-				</label>
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpRar6" className="mdl-radio__button" name="InpRar" onClick={this.handleRarity} value="6" />
-					<span className="mdl-radio__label">★★★★★★</span>
-				</label>
-			</p>
-			<p>
+				{rarityOutput}
+			</div>
+			<div>
 				進化：
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpPro0" className="mdl-radio__button" name="InpPro" onClick={this.handlePrompt} value="0" defaultChecked />
-					<span className="mdl-radio__label">未進化</span>
-				</label>
-				<label className="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-					<input type="radio" id="InpPro1" className="mdl-radio__button" name="InpPro" onClick={this.handlePrompt} value="1" />
-					<span className="mdl-radio__label">進化済</span>
-				</label>
-			</p>
+				{promptOutput}
+			</div>
 		</div>
 		);
 	}

@@ -1,7 +1,14 @@
 var React = require("react");
+var ReactPropTypes = React.PropTypes;
 var AppAction = require("../actions/AppAction");
 
 var ConInpText = React.createClass({
+	displayName: "ConInpText",
+	
+	propTypes: {
+    InpLevel: ReactPropTypes.number.isRequired,
+		InpExp: ReactPropTypes.number.isRequired
+  },
 	  
   handleLevel: function() {
 		var InpLevel;
@@ -86,23 +93,20 @@ var ConInpText = React.createClass({
 	render: function(){				
 		return(
 		<div>
-			<p>
-				<form action="#">
-			  	<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			    	<input className="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="InpLevel" onInput={this.handleLevel} defaultValue="1" />
-			    	<label className="mdl-textfield__label" htmlFor="InpLevel">現在Lv:</label>
-			    	<span className="mdl-textfield__error">数値が正しくありません</span>
-			  	</div>		
-			  	<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-			    	<input className="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="InpExp" onInput={this.handleExp} defaultValue="33" />
-			    	<label className="mdl-textfield__label" htmlFor="InpExp">次のLvまでの経験値:</label>
-			    	<span className="mdl-textfield__error">数値が正しくありません</span>
-			  	</div>
-				</form>
-      </p>
+			<div>
+			  <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			   	<input className="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="InpLevel" onInput={this.handleLevel} defaultValue={this.props.InpLevel} />
+			   	<label className="mdl-textfield__label" htmlFor="InpLevel">現在Lv:</label>
+			   	<span className="mdl-textfield__error">数値が正しくありません</span>
+			  </div>		
+			  <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			   	<input className="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="InpExp" onInput={this.handleExp} defaultValue={this.props.InpExp} />
+			   	<label className="mdl-textfield__label" htmlFor="InpExp">次のLvまでの経験値:</label>
+			   	<span className="mdl-textfield__error">数値が正しくありません</span>
+			  </div>
+      </div>
       <h5>合成素材</h5>
-      <p>
-				<form action="#">
+      <div>
 			  	<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			    	<input className="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="InpFeed5" onInput={this.handleFeed5} defaultValue="0" />
 			    	<label className="mdl-textfield__label" htmlFor="InpFeed5">同属性 5才:</label>
@@ -118,10 +122,8 @@ var ConInpText = React.createClass({
 			    	<label className="mdl-textfield__label" htmlFor="InpFeed100">100才:</label>
 			    	<span className="mdl-textfield__error">数値が正しくありません</span>
 			  	</div>
-			  </form>
-       </p>
-       <p>
-        <form action="#">
+       </div>
+       <div>
 			  	<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 			    	<input className="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="InpFeed5x" onInput={this.handleFeed5x} defaultValue="0" />
 			    	<label className="mdl-textfield__label" htmlFor="InpFeed5x">別属性 5才:</label>
@@ -137,8 +139,7 @@ var ConInpText = React.createClass({
 			    	<label className="mdl-textfield__label" htmlFor="InpFeed100x">100才:</label>
 			    	<span className="mdl-textfield__error">数値が正しくありません</span>
 			  	</div>
-			  </form>
-      </p>
+      </div>
 		</div>
 		);
 	}

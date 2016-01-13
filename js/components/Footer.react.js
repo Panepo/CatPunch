@@ -1,7 +1,7 @@
 var React = require("react");
-var AppAction = require("../actions/AppAction");
 
 var Footer = React.createClass({
+	displayName: "Footer",
 		
 	render: function(){
 		return(

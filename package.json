@@ -1,28 +1,26 @@
 {
   "name": "fkgexpcal-flux-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "FKG exp calculator",
   "main": "app.js",
   "author": "Panepo <panepo@github.io>",
   "license": "MIT",
+  "scripts": {
+    "start": "browserify -t [ babelify --presets [ react ] ] js/app.js -o bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Panepo/FKGExpCalFlux.git"
+  },
   "dependencies": {
-    "flux": "~2.0.1",
-    "object-assign": "~2.0.0",
-    "react": "~0.12.2"
+    "flux": "^2.1.1",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
   },
   "devDependencies": {
-    "browserify": "~9.0.3",
-    "envify": "^3.4.0",
-    "reactify": "~1.0.0",
-    "watchify": "^3.6.0"
-  },
-  "scripts": {
-    "start": "watchify -o bundle.js -v -d js/app.js",
-    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > bundle.min.js"
-  },
-  "browserify": {
-    "transform": [
-      "reactify"
-    ]
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0"
   }
 }
