@@ -11,12 +11,12 @@ var ConInpRad = React.createClass({
   },
 		
 	handleRarity: function(event){
-		var InpRarity = parseInt(event.target.id.slice(6)) + 2;
+		var InpRarity = parseInt(event.target.value) + 2;
 		AppAction.InpRarity(InpRarity);
 	},
 
 	handlePrompt: function(event){
-		var InpPrompt = parseInt(event.target.id.slice(6));	
+		var InpPrompt = parseInt(event.target.value);	
 		AppAction.InpPrompt(InpPrompt);
 	},
 		
@@ -34,13 +34,13 @@ var ConInpRad = React.createClass({
 			
 			if ( this.props.InpRarity == (i+2) ) {
 				rarityTemp = (
-					<button id={idStringTemp} key={idStringTemp} className={buttonClassActive} onClick={this.handleRarity}>
+					<button id={idStringTemp} value={i} key={idStringTemp} className={buttonClassActive} onClick={this.handleRarity}>
 						{rarityList[i]}
 					</button>
 				);
 			} else {
 				rarityTemp = (
-					<button id={idStringTemp} key={idStringTemp} className={buttonClassInactive} onClick={this.handleRarity}>
+					<button id={idStringTemp} value={i} key={idStringTemp} className={buttonClassInactive} onClick={this.handleRarity}>
 						{rarityList[i]}
 					</button>
 				);
@@ -58,13 +58,13 @@ var ConInpRad = React.createClass({
 			
 			if ( this.props.InpPrompt == i ) {
 				promptTemp = (
-					<button id={idStringTemp} key={idStringTemp} className={buttonClassActive} onClick={this.handlePrompt}>
+					<button id={idStringTemp} value={i} key={idStringTemp} className={buttonClassActive} onClick={this.handlePrompt}>
 						{promptList[i]}
 					</button>
 				);
 			} else {
 				promptTemp = (
-					<button id={idStringTemp} key={idStringTemp} className={buttonClassInactive} onClick={this.handlePrompt}>
+					<button id={idStringTemp} value={i} key={idStringTemp} className={buttonClassInactive} onClick={this.handlePrompt}>
 						{promptList[i]}
 					</button>
 				);

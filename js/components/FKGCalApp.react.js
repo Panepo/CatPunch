@@ -46,7 +46,10 @@ var FKGCalApp = React.createClass({
 							InpFeed20x = {this.state.CalData.InpFeed20x}
 							InpFeed100x = {this.state.CalData.InpFeed100x}
 							/>
-						<ConOut FeedTable = {this.state.CalData.FeedTable} DisplayEnable = {this.state.CalData.DisplayEnable} />
+						<ConOut 
+							FeedTable = {this.state.CalData.FeedTable}
+							DisplayEnable = {this.state.CalData.DisplayEnable}
+							/>
 						</div>
 					</div>
 				</main>
