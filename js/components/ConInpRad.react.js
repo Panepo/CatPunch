@@ -23,6 +23,9 @@ var ConInpRad = React.createClass({
 		var buttonClassInactive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent";
 		var idStringTemp = "";
 		
+		// ===============================================================================
+		// Generate rarity buttons
+		// ===============================================================================
 		var rarityList = ["★★", "★★★", "★★★★", "★★★★★", "★★★★★★"];
 		var rarityTemp;
 		var rarityOutput = [];
@@ -46,7 +49,9 @@ var ConInpRad = React.createClass({
 			rarityOutput.push(rarityTemp);
 		}
 		
-		
+		// ===============================================================================
+		// Generate prompt buttons
+		// ===============================================================================
 		var promptList = ["未進化", "進化済"];
 		var promptTemp;
 		var promptOutput = [];
@@ -69,7 +74,10 @@ var ConInpRad = React.createClass({
 			}
 			promptOutput.push(promptTemp);
 		}
-		
+
+		// ===============================================================================
+		// return
+		// ===============================================================================		
 		return(
 		<div className="ConInpRad">
       <h4>フラワーナイトガール経験値計算機</h4>

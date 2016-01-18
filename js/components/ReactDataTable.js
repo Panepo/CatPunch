@@ -38,6 +38,9 @@ var ReactDataTable = React.createClass({
 	},
 	
 	render: function(){
+		// ===============================================================================
+		// Table Sorting
+		// ===============================================================================
 		var sortKey = this.state.sortKey;
 		
 		if ( this.state.sortDir == 0) {
@@ -61,7 +64,10 @@ var ReactDataTable = React.createClass({
 				});
 			}
 		}
-		
+
+		// ===============================================================================
+		// Generate Table Head
+		// ===============================================================================
 		var idStringTemp = "";
 		var tableHeadOut = [];
 		var tableHeadTemp;
@@ -72,7 +78,10 @@ var ReactDataTable = React.createClass({
 			tableHeadOut.push(tableHeadTemp);
 		}
 		tableHeadOut = <thead><tr>{tableHeadOut}</tr></thead>;
-	
+
+		// ===============================================================================
+		// Generate Table Content
+		// ===============================================================================
 		var tableDataOut = [];
 		var tableDataTemp;
 		var tableContOut = [];
@@ -90,7 +99,10 @@ var ReactDataTable = React.createClass({
 			tableDataOut.push(tableDataTemp);
 		}
 		tableDataOut = <tbody>{tableDataOut}</tbody>;
-		
+
+		// ===============================================================================
+		// Data Output
+		// ===============================================================================		
 		return( 
 			<div>
 				<table className={this.props.tableClass}>

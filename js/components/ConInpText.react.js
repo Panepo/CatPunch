@@ -35,6 +35,9 @@ var ConInpText = React.createClass({
 		var classErr = "mdl-textfield__error";
 		var idStringTemp = "";
 		
+		// ===============================================================================
+		// Generate text group A
+		// ===============================================================================
 		var textAList = ["現在Lv:", "次のLvまでの経験値:"];
 		var textAId = ["InpLevel", "InpExp"];
 		var textATemp;
@@ -52,6 +55,9 @@ var ConInpText = React.createClass({
 			textAOutput.push(textATemp);
 		}
 		
+		// ===============================================================================
+		// Generate text group B
+		// ===============================================================================
 		var textBList = ["同属性 5才:", "20才:", "100才:"];
 		var textBId = ["InpFeed5", "InpFeed20", "InpFeed100"];
 		var textBTemp;
@@ -69,6 +75,9 @@ var ConInpText = React.createClass({
 			textBOutput.push(textBTemp);
 		}
 
+		// ===============================================================================
+		// Generate text group C
+		// ===============================================================================
 		var textCList = ["別属性 5才:", "20才:", "100才:"];
 		var textCId = ["InpFeed5x", "InpFeed20x", "InpFeed100x"];
 		var textCTemp;
@@ -86,7 +95,9 @@ var ConInpText = React.createClass({
 			textCOutput.push(textCTemp);
 		}
 
-		
+		// ===============================================================================
+		// return
+		// ===============================================================================	
 		return(
 		<div className = "ConInpText" >
 			<div>

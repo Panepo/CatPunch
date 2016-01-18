@@ -47,19 +47,15 @@ function _InpPrompt(InpPrompt){
 // ===============================================================================
 // APP STORE MAIN
 // ===============================================================================
-// define a Store object the extends EventEmitter from node.js event lib
 var AppStore = assign({}, EventEmitter.prototype, {
 	getValue: function(){
 		return _CalData;
 	},
 
-  // trigger a value changed event!!
 	emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
   
-  // the callback function will be defined and be passed from view 
-  // in our example, the callback function be defined in DemoApp.react.js and named _onChange
 	addChangeListener: function(callback) {
 		this.on(CHANGE_EVENT, callback);
 	},
@@ -69,12 +65,9 @@ var AppStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-
-
 // ===============================================================================
 // APP DISPATCHER
 // ===============================================================================
-//Use dispatcher to listen some events
 AppDispatcher.register(function(action){
 	switch(action.actionType){
 		case "InputRarity":
