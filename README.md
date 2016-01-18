@@ -14,11 +14,11 @@ $ cd FKGExpCalFlux
 $ npm install
 ```
 
-Use browserify to build scripts   
+Use webpack to build scripts   
 ```
 $ npm start
 ```
 
 ### Usage
-Just take the index.html to your browser to see the result.
-
+Just visit [http://localhost:3000/](http://localhost:3000/)
+or take the index.html to your browser to see the result.

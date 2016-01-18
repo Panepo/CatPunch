@@ -17,7 +17,9 @@ var _CalData = {
 	InpFeed20x: 0,
 	InpFeed100x: 0,
 	FeedTable: [],
-	DisplayEnable: false
+	DisplayEnable: false,
+	expLeft: 0,
+	outString: ""
 	};
 
 // ===============================================================================
@@ -25,19 +27,19 @@ var _CalData = {
 // ===============================================================================
 function _inputChange(type, input) {
 	_CalData[type] = input;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	[_CalData.outString, _CalData.expLeft, _CalData.FeedTable] = FKGExpCal.ExpCal(_CalData);
 	_CalData.DisplayEnable = true;
 }
 
 function _InpRarity(InpRarity){
 	_CalData.InpRarity = InpRarity;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	[_CalData.outString, _CalData.expLeft, _CalData.FeedTable] = FKGExpCal.ExpCal(_CalData);
 	_CalData.DisplayEnable = true;
 }
 
 function _InpPrompt(InpPrompt){
 	_CalData.InpPrompt = InpPrompt;
-	_CalData.FeedTable = FKGExpCal.ExpCal(_CalData);
+	[_CalData.outString, _CalData.expLeft, _CalData.FeedTable] = FKGExpCal.ExpCal(_CalData);
 	_CalData.DisplayEnable = true;
 }
 

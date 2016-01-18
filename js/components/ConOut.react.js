@@ -3,28 +3,29 @@ var ReactPropTypes = React.PropTypes;
 var ConOutTable = require("./ConOutTable.react");
 
 var ConOut = React.createClass({
-	displayName: "ConInpRad",
+	displayName: "ConOut",
 	
 	propTypes: {
+		outString: ReactPropTypes.string.isRequired,
+		expLeft: ReactPropTypes.number.isRequired,
     FeedTable: ReactPropTypes.array.isRequired,
 		DisplayEnable: ReactPropTypes.bool.isRequired
   },
 	
 	render: function(){
-				
 		if ( this.props.DisplayEnable === false ) {
 			return null;
 		} else {
-			if ( typeof this.props.FeedTable[0][0] === 'string' || this.props.FeedTable[0][0] instanceof String ) {
+			if ( this.props.outString.length >= 1 ) {
 				return( 
 					<div>
-						{this.props.FeedTable[0][0]}
+						{this.props.outString}
 					</div>
 				);
 			} else {								
 				return(
 					<div>
-						<p>最大Lvまでの経験値：{this.props.FeedTable[0][0]}</p>
+						<p>最大Lvまでの経験値：{this.props.expLeft}</p>
 						<p>最大Lvまでにあと必要な同属性素材の目安</p>
 						<ConOutTable FeedTable={this.props.FeedTable}/>
 					</div>

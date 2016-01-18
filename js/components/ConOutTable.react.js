@@ -24,7 +24,7 @@ var ConOutTable = React.createClass({
 				</thead>
     );
     
-		for ( var i = 1; i < this.props.FeedTable.length; i++) {
+		for ( var i = 0; i < this.props.FeedTable.length; i++) {
 			TableCont = (
 					<tr key={i}>
 					<td>{this.props.FeedTable[i][0]}</td>
