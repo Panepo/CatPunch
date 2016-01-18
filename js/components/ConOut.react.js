@@ -1,6 +1,6 @@
 var React = require("react");
 var ReactPropTypes = React.PropTypes;
-var ConOutTable = require("./ConOutTable.react");
+var ReactDataTable = require("./ReactDataTable");
 
 var ConOut = React.createClass({
 	displayName: "ConOut",
@@ -13,6 +13,9 @@ var ConOut = React.createClass({
   },
 	
 	render: function(){
+		var tableClass = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp";
+		var tableHead = ["100才", "20才", "5才", "總數", "溢出経験値"];
+		
 		if ( this.props.DisplayEnable === false ) {
 			return null;
 		} else {
@@ -27,7 +30,11 @@ var ConOut = React.createClass({
 					<div>
 						<p>最大Lvまでの経験値：{this.props.expLeft}</p>
 						<p>最大Lvまでにあと必要な同属性素材の目安</p>
-						<ConOutTable FeedTable={this.props.FeedTable}/>
+						<ReactDataTable tableClass={tableClass}
+														tableHead={tableHead}
+														tableData={this.props.FeedTable}
+														tableId="FeedTable"
+														/>
 					</div>
 				);
 			}
