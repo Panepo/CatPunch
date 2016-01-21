@@ -22,6 +22,7 @@ var ConInpRad = React.createClass({
 		var buttonClassActive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary";
 		var buttonClassInactive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent";
 		var idStringTemp = "";
+		var classTemp = "";
 		
 		// ===============================================================================
 		// Generate rarity buttons
@@ -34,18 +35,16 @@ var ConInpRad = React.createClass({
 			idStringTemp = "rarity" + i.toString();
 			
 			if ( this.props.InpRarity == (i+2) ) {
-				rarityTemp = (
-					<button key={idStringTemp} className={buttonClassActive} onClick={this.handleRarity.bind(null, i+2)}>
-						{rarityList[i]}
-					</button>
-				);
+				classTemp = buttonClassActive;
 			} else {
-				rarityTemp = (
-					<button key={idStringTemp} className={buttonClassInactive} onClick={this.handleRarity.bind(null, i+2)}>
-						{rarityList[i]}
-					</button>
-				);
+				classTemp = buttonClassInactive;
 			}
+			
+			rarityTemp = (
+				<button key={idStringTemp} className={classTemp} onClick={this.handleRarity.bind(null, i+2)}>
+					{rarityList[i]}
+				</button>
+			);
 			rarityOutput.push(rarityTemp);
 		}
 		
@@ -60,18 +59,16 @@ var ConInpRad = React.createClass({
 			idStringTemp = "prompt" + i.toString();
 			
 			if ( this.props.InpPrompt == i ) {
-				promptTemp = (
-					<button key={idStringTemp} className={buttonClassActive} onClick={this.handlePrompt.bind(null, i)}>
-						{promptList[i]}
-					</button>
-				);
+				classTemp = buttonClassActive;
 			} else {
-				promptTemp = (
-					<button key={idStringTemp} className={buttonClassInactive} onClick={this.handlePrompt.bind(null, i)}>
-						{promptList[i]}
-					</button>
-				);
+				classTemp = buttonClassInactive;
 			}
+			
+			promptTemp = (
+				<button key={idStringTemp} className={classTemp} onClick={this.handlePrompt.bind(null, i)}>
+					{promptList[i]}
+				</button>
+			);
 			promptOutput.push(promptTemp);
 		}
 

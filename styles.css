@@ -56,10 +56,7 @@
 
 .demo-footer {
   padding-left: 40px;
-}
-
-.demo-footer .mdl-mini-footer--link-list a {
-  font-size: 13px;
+	font-size: 11px;
 }
 
 #view-source {

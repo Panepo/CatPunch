@@ -8,9 +8,9 @@ var Footer = React.createClass({
 		<div>
       <footer className="demo-footer mdl-mini-footer">
         <div className="mdl-mini-footer--left-section">
-          <div><small> 『<a href="http://www.dmm.com/netgame_s/flower/">フラワーナイトガール</a>』(C) DMMゲームズ</small></div>
-					<div><small>「フラワーナイトガール」から転載された全てのコンテンツの著作権につきましては、権利者様へ帰属します。</small></div>
-					<div><small> Copyright &copy; Panepo@Github 2015 All Rights Reserved.</small></div>
+          <div> 『<a href="http://www.dmm.com/netgame_s/flower/">フラワーナイトガール</a>』(C) DMMゲームズ</div>
+					<div>「フラワーナイトガール」から転載された全てのコンテンツの著作権につきましては、権利者様へ帰属します。</div>
+					<div> Copyright &copy; Panepo@Github 2015 All Rights Reserved.</div>
         </div>
       </footer>
 		</div>
