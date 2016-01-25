@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack",
-		"buildls": "webpack --config webpack.config.ls.js"
+		"buildls": "webpack --config webpack.config.ls"
   },
   "repository": {
     "type": "git",
