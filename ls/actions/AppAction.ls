@@ -3,19 +3,19 @@ require! {
 }
 
 AppAction = 
-	InpRarity: (InpRarity) ->
+	InpRarity: (InpRarity) !->
 		AppDispatcher.dispatch(
 			actionType: "InputRarity"
 			InpRarity: InpRarity
 			)
 	
-	InpPrompt: (InpPrompt) ->
+	InpPrompt: (InpPrompt) !->
 		AppDispatcher.dispatch(
 			actionType: "InputPrompt"
 			InpPrompt: InpPrompt
 			)
 	
-	inputChange: (type, input) ->
+	inputChange: (type, input) !->
 		AppDispatcher.dispatch(
 			actionType: "inputChange"
 			type: type

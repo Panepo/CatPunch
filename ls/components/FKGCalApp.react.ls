@@ -5,7 +5,7 @@ require! {
 	"./ConInpRad.react.ls": ConInpRad
 	"./ConInpText.react.ls": ConInpText
 	"./ConOut.react.ls": ConOut
-	"../stores/AppStore": AppStore
+	"../stores/AppStore.ls": AppStore
 }
 
 {div, table, thead, tbody, th, tr, td, label, input, main } = React.DOM
@@ -43,9 +43,26 @@ FKGCalApp = React.createClass do
 					div className: "demo-container mdl-grid",
 						div className: "mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone", null
 						div className: "demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
-							Con1 InpRarity: @state.CalData.InpRarity, InpPrompt: @state.CalData.InpPrompt, null
-							Con2 InpLevel: @state.CalData.InpLevel, InpExp: @state.CalData.InpExp, InpFeed5: @state.CalData.InpFeed5, InpFeed20: @state.CalData.InpFeed20, InpFeed100: @state.CalData.InpFeed100, InpFeed5x: @state.CalData.InpFeed5x, InpFeed20x: @state.CalData.InpFeed20x, InpFeed100x: @state.CalData.InpFeed100x, null
-							Con3 outString: @state.CalData.outString, expLeft: @state.CalData.expLeft, FeedTable: @state.CalData.FeedTable, DisplayEnable: @state.CalData.DisplayEnable, null
+							Con1 {
+								InpRarity: @state.CalData.InpRarity
+								InpPrompt: @state.CalData.InpPrompt
+							}, null
+							Con2 {
+								InpLevel: @state.CalData.InpLevel
+								InpExp: @state.CalData.InpExp
+								InpFeed5: @state.CalData.InpFeed5
+								InpFeed20: @state.CalData.InpFeed20
+								InpFeed100: @state.CalData.InpFeed100
+								InpFeed5x: @state.CalData.InpFeed5x
+								InpFeed20x: @state.CalData.InpFeed20x
+								InpFeed100x: @state.CalData.InpFeed100x
+							}, null
+							Con3 {
+								outString: @state.CalData.outString
+								expLeft: @state.CalData.expLeft
+								FeedTable: @state.CalData.FeedTable
+								DisplayEnable: @state.CalData.DisplayEnable
+							}, null
 				Footer null
 
 module.exports = FKGCalApp

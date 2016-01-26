@@ -31,6 +31,11 @@ ConOut = React.createClass do
 				div null,
 					p null, "最大Lvまでの経験値：" @props.expLeft
 					p null, "最大Lvまでにあと必要な同属性素材の目安"
-					tableOutput tableClass: tableClass, tableHead: tableHead, tableData: @props.FeedTable, tableId: "FeedTable",
+					tableOutput {
+						tableClass: tableClass
+						tableHead: tableHead
+						tableData: @props.FeedTable
+						tableId: "FeedTable"
+					}
 
 module.exports = ConOut;
