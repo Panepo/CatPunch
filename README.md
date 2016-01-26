@@ -14,9 +14,21 @@ $ cd FKGExpCalFlux
 $ npm install
 ```
 
-Use webpack to build scripts   
+Run simulated server
 ```
 $ npm start
+```
+
+Or use webpack to build scripts
+```
+$ webpack
+or
+$ npm run build
+```
+
+For livescript code, use config for livescript
+```
+$ npm run buildls
 ```
 
 ### Usage
