@@ -4,7 +4,7 @@ require! {
 }
 
 module.exports = {
-	#devtool: 'cheap-module-eval-source-map'
+	devtool: "sourcemap"
 	entry: [
 		#'webpack-hot-middleware/client'
 		"./ls/app"
@@ -22,7 +22,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.js$/
-				loaders: [ 'babel' ]
+				loaders: [ "react-hot", "babel" ]
 				include: path.join(__dirname, 'ls')
 			}
 			{

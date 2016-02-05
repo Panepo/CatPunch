@@ -38,4 +38,4 @@ ConOut = React.createClass do
 						tableId: "FeedTable"
 					}
 
-module.exports = ConOut;
+module.exports = ConOut
