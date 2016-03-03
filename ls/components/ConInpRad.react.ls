@@ -18,10 +18,10 @@ ConInpRad = React.createClass do
 		InpPrompt: types.number.isRequired
 		InpRarity: types.number.isRequired
 		
-	handleRarity: (rarity) ->
+	handleRarity: (rarity) !->
 		AppAction.InpRarity(rarity)
 
-	handlePrompt: (prompt) ->
+	handlePrompt: (prompt) !->
 		AppAction.InpPrompt(prompt)
 
 	render: ->

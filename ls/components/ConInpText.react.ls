@@ -26,7 +26,7 @@ ConInpText = React.createClass do
 		InpFeed20x: types.number.isRequired
 		InpFeed100x: types.number.isRequired
 	
-	handleInput: (event) ->
+	handleInput: (event) !->
 		type = event.target.id
 		input = parseInt(event.target.value)
 		

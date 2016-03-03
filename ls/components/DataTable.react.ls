@@ -20,10 +20,10 @@ ReactDataTable = React.createClass do
 			sortDir: 0
 		}
 	
-	componentDidUpdate: ->
+	componentDidUpdate: !->
 		componentHandler.upgradeDom()
 	
-	handleSort: (sortKey) ->
+	handleSort: (sortKey) !->
 		if @state.sortKey is sortKey
 			if @state.sortDir is 0
 				@setState {

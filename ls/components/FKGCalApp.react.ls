@@ -24,13 +24,13 @@ FKGCalApp = React.createClass do
 			CalData: AppStore.getValue()
 		}
 	
-	componentDidMount: ->
+	componentDidMount: !->
 		AppStore.addChangeListener(@_onChange)
 
-	componentWillUnmount: ->
+	componentWillUnmount: !->
 		AppStore.removeChangeListener(@_onChange)
 		
-	_onChange: ->
+	_onChange: !->
 		@setState {
 			CalData: AppStore.getValue()
 		}

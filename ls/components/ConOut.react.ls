@@ -19,7 +19,7 @@ ConOut = React.createClass do
 		FeedTable: ReactPropTypes.array.isRequired
 		DisplayEnable: ReactPropTypes.bool.isRequired
 
-	componentDidUpdate: ->
+	componentDidUpdate: !->
 		componentHandler.upgradeDom()
 
 	render: ->
