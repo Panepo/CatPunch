@@ -62,7 +62,7 @@ ReactDataTable = React.createClass do
 				thead null,
 					tr null,
 						for thead-value, i in @props.tableHead
-							th key: @props.tableId + " th" + i.toString(), onclick: @handleSort.bind(null, i), thead-value
+							th key: @props.tableId + " th" + i.toString(), onClick: @handleSort.bind(null, i), thead-value
 				tbody null,
 					for tab-value, i in @props.tableData
 						tr key: @props.tableId + " tr" + i.toString(),

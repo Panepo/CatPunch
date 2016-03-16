@@ -19,10 +19,9 @@ Con3 = React.createFactory ConOut
 FKGCalApp = React.createClass do
 	displayName: "FKGCalApp"
 
-	getInitialState: ->
-		{
-			CalData: AppStore.getValue()
-		}
+	getInitialState: -> {
+		CalData: AppStore.getValue()
+	}
 	
 	componentDidMount: !->
 		AppStore.addChangeListener(@_onChange)
