@@ -9,7 +9,7 @@ require! {
 buttonClassActive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary"
 buttonClassInactive = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent"
 rarityList = ["★★", "★★★", "★★★★", "★★★★★", "★★★★★★"]
-promptList = ["未進化", "進化済"]
+promptList = ["未進化", "進化済", "開花済"]
 
 ConInpRad = React.createClass do
 	displayName: "ConInpRad"

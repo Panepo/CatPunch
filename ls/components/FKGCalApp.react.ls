@@ -23,6 +23,9 @@ FKGCalApp = React.createClass do
 		CalData: AppStore.getValue()
 	}
 	
+	componentDidUpdate: !->
+		componentHandler.upgradeDom()
+	
 	componentDidMount: !->
 		AppStore.addChangeListener(@_onChange)
 
