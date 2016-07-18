@@ -2,7 +2,7 @@ require! {
 	"react": React
 }
 
-{div, table, thead, tbody, th, tr, td, label, input, span, a} = React.DOM
+{div, a} = React.DOM
 
 Footer = React.createClass do
 	displayName: "Footer"
