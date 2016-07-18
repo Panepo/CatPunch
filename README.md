@@ -1,6 +1,6 @@
-# [FKGExpCalFlux]( http://panepo.github.io/FKGExpCalFlux/)
+# [CatPunch](https://github.com/Panepo/CatPunch.git)
 
-Flower Knight Girl experience calculator Web version using flux and react
+フラワーナイトガール経験値計算機 貓パンチ
 
 『[フラワーナイトガール](http://www.dmm.com/netgame_s/flower/)』(C) DMMゲームズ
 
@@ -9,8 +9,8 @@ Flower Knight Girl experience calculator Web version using flux and react
 ## Developement
 
 ```
-$ git clone https://github.com/Panepo/FKGExpCalFlux.git
-$ cd FKGExpCalFlux
+$ git clone https://github.com/Panepo/CatPunch.git
+$ cd CatPunch
 $ npm install
 ```
 
@@ -23,11 +23,6 @@ Or use webpack to build scripts
 ```
 $ webpack
 or
-$ npm run build
-```
-
-For livescript code, use config for livescript
-```
 $ npm run buildls
 ```
 
