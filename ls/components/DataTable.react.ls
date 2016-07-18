@@ -65,8 +65,9 @@ ReactDataTable = React.createClass do
 							th key: @props.tableId + " th" + i.toString(), onClick: @handleSort.bind(null, i), thead-value
 				tbody null,
 					for tab-value, i in @props.tableData
-						tr key: @props.tableId + " tr" + i.toString(),
-						for table-value, j in tab-value
-							td key: @props.tableId + " td"  + i.toString() + j.toString(), table-value
+						if i < 11
+							tr key: @props.tableId + " tr" + i.toString(),
+							for table-value, j in tab-value
+								td key: @props.tableId + " td"  + i.toString() + j.toString(), table-value
 
 module.exports = ReactDataTable

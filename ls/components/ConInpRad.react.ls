@@ -26,7 +26,7 @@ ConInpRad = React.createClass do
 
 	render: ->
 		div className: "ConInpRad",
-			h4 null, "フラワーナイトガール経験値計算機"
+			h4 null, "フラワーナイトガール経験値計算機 貓パンチ"
 			h5 null, "對象騎士"
 			div null,
 				"レアリティ："
