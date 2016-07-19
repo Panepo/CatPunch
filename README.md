@@ -1,6 +1,8 @@
-# [CatPunch](https://github.com/Panepo/CatPunch.git)
+# [CatPunch](http://panepo.github.io/CatPunch/)
 
 フラワーナイトガール経験値計算機 貓パンチ
+
+Flower knight girl exp calculator CatPunch
 
 『[フラワーナイトガール](http://www.dmm.com/netgame_s/flower/)』(C) DMMゲームズ
 
