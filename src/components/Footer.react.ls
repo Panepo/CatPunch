@@ -2,21 +2,24 @@ require! {
 	"react": React
 }
 
-{div, a} = React.DOM
+{footer, div, a, small} = React.DOM
 
 Footer = React.createClass do
 	displayName: "Footer"
 
 	render: ->
-		div className: "demo-footer mdl-mini-footer",
+		footer className: "demo-footer mdl-mini-footer",
 			div className: "mdl-mini-footer--left-section",
 				div null,
-					"『"
-					a href: "http://www.dmm.com/netgame_s/flower/", "フラワーナイトガール"
-					"』(C) DMMゲームズ"
+					small null,
+						"『"
+						a href: "http://www.dmm.com/netgame_s/flower/", "フラワーナイトガール"
+						"』(C) DMMゲームズ"
 				div null,
-					"「フラワーナイトガール」から転載された全てのコンテンツの著作権につきましては、権利者様へ帰属します。"
+					small null,
+						"「フラワーナイトガール」から転載された全てのコンテンツの著作権につきましては、権利者様へ帰属します。"
 				div null,
-					"Copyright (C) Panepo@Github 2015 All Rights Reserved."
+					small null,
+						"Copyright (C) Panepo@Github 2016 All Rights Reserved."
 
 module.exports = Footer;
