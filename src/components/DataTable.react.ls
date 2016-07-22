@@ -56,18 +56,31 @@ ReactDataTable = React.createClass do
 				@props.tableData.sort (a, b) ->
 					a[sortKey] - b[sortKey]
 	
+	handleChange: (event) !->
+		trId = event.target.id + "tr"
+		if event.target.checked
+			document.getElementById(trId).style.backgroundColor = '#f5f5f5'
+		else
+			document.getElementById(trId).style.backgroundColor = "transparent"
+	
+	
 	render: ->
 		div null,
 			table className: @props.tableClass,
 				thead null,
 					tr null,
 						for thead-value, i in @props.tableHead
-							th key: @props.tableId + " th" + i.toString(), onClick: @handleSort.bind(null, i), thead-value
+							th key: @props.tableId + " th" + i.toString! , onClick: @handleSort.bind(null, i), thead-value
 				tbody null,
 					for tab-value, i in @props.tableData
 						if i < 11
-							tr key: @props.tableId + " tr" + i.toString(),
-							for table-value, j in tab-value
-								td key: @props.tableId + " td"  + i.toString() + j.toString(), table-value
+							tr key: @props.tableId+" tr"+i.toString!, id: @props.id+"check"+i.toString!+"tr",
+							for j from 0 to tab-value.length
+								td key: @props.tableId + " td"  + i.toString! + j.toString!,
+								if j is 0
+									label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.id+"check"+i.toString!,
+										input type: "checkbox" id:@props.id+"check"+i.toString!, className: "mdl-checkbox__input", onChange: @handleChange, null
+								else
+									tab-value[j-1]
 
 module.exports = ReactDataTable

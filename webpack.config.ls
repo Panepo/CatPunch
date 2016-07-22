@@ -7,7 +7,7 @@ module.exports = {
 	devtool: "sourcemap"
 	entry: [
 		#'webpack-hot-middleware/client'
-		"./ls/app.ls"
+		"./src/app.ls"
 	]
 	output: {
 		path: path.join(__dirname, 'build')
@@ -23,12 +23,12 @@ module.exports = {
 			{
 				test: /\.js$/
 				loaders: [ "react-hot", "babel" ]
-				include: path.join(__dirname, 'ls')
+				include: path.join(__dirname, 'src')
 			}
 			{
 				test: /\.ls$/
 				loaders: [ "react-hot", "livescript-loader" ]
-				include: path.join(__dirname, 'ls')
+				include: path.join(__dirname, 'src')
 			}
 		]
 	}

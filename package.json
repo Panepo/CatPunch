@@ -1,18 +1,17 @@
 {
-  "name": "fkgexpcal-flux-react",
+  "name": "CatPunch",
   "version": "2.0.0",
-  "description": "FKG exp calculator",
+  "description": "FKG exp calculator CatPunch",
   "main": "app.js",
   "author": "Panepo <panepo@github.io>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack",
-		"buildls": "webpack --config webpack.config.ls"
+    "start": "lsc server.ls --nodejs --harmoy",
+		"build": "webpack --config webpack.config.ls"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Panepo/FKGExpCalFlux.git"
+    "url": "https://github.com/Panepo/CatPunch.git"
   },
   "dependencies": {
     "flux": "^2.1.1",

@@ -6,8 +6,8 @@ require! {
 
 {div, table, thead, tbody, th, tr, td, label, input, span, p} = React.DOM
 
-tableClass = "mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"
-tableHead = ["100才" "20才" "5才" "總數" "溢出経験値"]
+tableClass = "mdl-data-table mdl-js-data-table mdl-shadow--2dp"
+tableHead = ["" "100才" "20才" "5才" "總數" "溢出経験値"]
 tableOutput = React.createFactory DataTable
 
 ConOut = React.createClass do
