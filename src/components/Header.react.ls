@@ -16,4 +16,4 @@ Header = React.createClass do
 					a className: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary", href: "http://www.dmm.com/netgame_s/flower/", "フラワーナイトガール"
 					a className: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary", href: "http://フラワーナイトガール.攻略wiki.com/index.php", "wiki"
 
-module.exports = Header;
+module.exports = Header
