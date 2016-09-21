@@ -6,11 +6,11 @@ require! {
 
 {div, table, thead, tbody, th, tr, td, label, input, span, h5} = React.DOM
 
-textAList = ["現在Lv:" "次のLvまでの経験値:"]
+textAList = ["現在Lv：" "次のLvまでの経験値："]
 textAId = ["InpLevel" "InpExp"]
-textBList = ["同属性 5才:" "20才:" "100才:"]
+textBList = ["同属性 5才：" "20才：" "100才："]
 textBId = ["InpFeed5" "InpFeed20" "InpFeed100"]
-textCList = ["別属性 5才:" "20才:" "100才:"]
+textCList = ["別属性 5才：" "20才：" "100才："]
 textCId = ["InpFeed5x" "InpFeed20x" "InpFeed100x"]
 
 ConInpText = React.createClass do
