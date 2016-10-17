@@ -34,6 +34,11 @@ _inputChange = (type, input) !->
 
 _InpRarity = (InpRarity) !->
 	_CalData.InpRarity = InpRarity
+	
+	if _CalData.InpPrompt is 2
+		if InpRarity <= 4
+			_CalData.InpPrompt = 0
+	
 	[_CalData.outString, _CalData.expLeft, _CalData.FeedTable] = FKGExpCal.ExpCal(_CalData)
 	_CalData.DisplayEnable = true
 

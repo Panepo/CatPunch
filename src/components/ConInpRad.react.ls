@@ -38,9 +38,16 @@ ConInpRad = React.createClass do
 			div null,
 				"進化："
 				for pro-value, i in promptList
-					if @props.InpPrompt is i
-						button key: "prompt" + i.toString(), className: buttonClassActive, onClick: @handlePrompt.bind(null, i), pro-value
+					if i is 2
+						if @props.InpRarity >= 5
+							if @props.InpPrompt is i
+								button key: "prompt" + i.toString(), className: buttonClassActive, onClick: @handlePrompt.bind(null, i), pro-value
+							else
+								button key: "prompt" + i.toString(), className: buttonClassInactive, onClick: @handlePrompt.bind(null, i), pro-value
 					else
-						button key: "prompt" + i.toString(), className: buttonClassInactive, onClick: @handlePrompt.bind(null, i), pro-value
+						if @props.InpPrompt is i
+							button key: "prompt" + i.toString(), className: buttonClassActive, onClick: @handlePrompt.bind(null, i), pro-value
+						else
+							button key: "prompt" + i.toString(), className: buttonClassInactive, onClick: @handlePrompt.bind(null, i), pro-value
 
 module.exports = ConInpRad
