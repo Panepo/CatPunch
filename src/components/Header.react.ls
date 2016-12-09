@@ -14,6 +14,6 @@ Header = React.createClass do
 				div className: "mdl-layout-spacer", null
 				nav className: "mdl-navigation",
 					a className: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary", href: "http://www.dmm.com/netgame_s/flower/", "フラワーナイトガール"
-					a className: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary", href: "http://フラワーナイトガール.攻略wiki.com/index.php", "wiki"
+					a className: "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary", href: "http://フラワーナイトガール.攻略wiki.com/index.php", "攻略wiki"
 
 module.exports = Header
